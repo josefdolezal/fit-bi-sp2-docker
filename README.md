@@ -11,3 +11,9 @@ Used for generating PHP documentation.
 docker run --rm -v"$PWD/app:/app/src" -v"$PWD/docs:/app/docs" josefdolezal/fit-bi-sp2-apigen
 ```
 The first attached volume points to your app source code, the second one is for apigen output. By default, we use the Bootstrap theme.
+
+## PHP 7
+App frontend is build on PHP Nette framework and uses Mariadb database. We use this image linked with Mariadb in separate containers.
+
+### Usage
+We mainly use this container in docker-compose, see [frontend](frontend) for more informations.
