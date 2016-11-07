@@ -1,0 +1,25 @@
+version: '2'
+services:
+  web:
+    image:
+      - josefdolezal/fit-bi-sp2-php7
+    expose:
+      - "9000"
+    ports:
+      - "8080:80"
+      - "9001:9001"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mariadb
+    links:
+      - mariadb
+  mariadb:
+    image: mariadb:latest
+    volumes:
+      - .:/var/shared_data
+    environment:
+      - MYSQL_ROOT_PASSWORD=netterootpassword
+      - MYSQL_USER=netteuser
+      - MYSQL_PASSWORD=nettepassword
+      - MYSQL_DATABASE=nette
