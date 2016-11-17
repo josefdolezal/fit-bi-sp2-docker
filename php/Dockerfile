@@ -6,7 +6,8 @@ RUN apt-get install -y php5-mysql \
 		sed \
 		libmcrypt-dev \
 		zlib1g-dev \
-		libxml2-dev
+		libxml2-dev \
+		zip
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql mcrypt zip xml
 
